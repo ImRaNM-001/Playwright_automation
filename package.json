@@ -1,0 +1,35 @@
+{
+  "name": "wdio_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npx t",
+    "_test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImRaNM-001/Playwright_automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImRaNM-001/Playwright_automation/issues"
+  },
+  "homepage": "https://github.com/ImRaNM-001/Playwright_automation#readme",
+  "dependencies": {
+    "@wdio/cli": "^7.19.7"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^7.19.7",
+    "@wdio/mocha-framework": "^7.19.7",
+    "@wdio/spec-reporter": "^7.19.7",
+    "chromedriver": "^101.0.0",
+    "wdio-chromedriver-service": "^7.3.2",
+    "@wdio/sync": "7.19.7"  
+  }
+}
