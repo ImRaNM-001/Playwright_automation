@@ -1,1 +1,1 @@
-# WDIO_automation
+# Playwright_automation
