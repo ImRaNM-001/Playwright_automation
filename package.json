@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "lint": "eslint --ext .ts ./tests"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ImRaNM-001/Playwright_automation.git"
@@ -16,6 +19,10 @@
   },
   "homepage": "https://github.com/ImRaNM-001/Playwright_automation#readme",
   "devDependencies": {
-    "@playwright/test": "^1.21.0"
+    "@playwright/test": "^1.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-unused-imports": "^3.0.0"
   }
 }

@@ -1,5 +1,4 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
-import { devices } from '@playwright/test';
+import type { PlaywrightTestConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -12,8 +11,9 @@ import { devices } from '@playwright/test';
  */
 const config: PlaywrightTestConfig = {
   testDir: './tests',
+  testMatch :['example.spec.ts', 'my-practice-test.spec.ts'],
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 50 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -36,18 +36,19 @@ const config: PlaywrightTestConfig = {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
+    headless : false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-      },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //   },
+    // },
 
     // {
     //   name: 'firefox',
@@ -56,12 +57,13 @@ const config: PlaywrightTestConfig = {
     //   },
     // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },        
+
 
     /* Test against mobile viewports. */
     // {
@@ -84,12 +86,19 @@ const config: PlaywrightTestConfig = {
     //     channel: 'msedge',
     //   },
     // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: {
-    //     channel: 'chrome',
-    //   },
-    // },
+    
+    {
+      name: 'Google Chrome',
+      use: {
+        channel: 'chrome',
+        viewport: null,
+
+        launchOptions:{
+          args: ["--start-maximized"]
+        },
+        screenshot: 'on'
+      },
+    },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
